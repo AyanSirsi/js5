@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+</head>
+<body>
+    <h2>Array Operations</h2>
+    <div id="result"></div>
+
+    <script>
+        let numbers = [10, 5, 8, 3, 12, 6];
+        let resultHtml = "";
+
+        
+        resultHtml += `<p><strong>Length of the array:</strong> ${numbers.length}</p>`;
+
+    
+        numbers.push(7);
+        resultHtml += `<p><strong>Array after adding 7:</strong> ${numbers}</p>`;
+
+        
+        numbers.shift();
+        resultHtml += `<p><strong>Array after removing the first element:</strong> ${numbers}</p>`;
+
+    
+        numbers.sort((a, b) => a - b);
+        resultHtml += `<p><strong>Array after sorting:</strong> ${numbers}</p>`;
+
+    
+        numbers.reverse();
+        resultHtml += `<p><strong>Array after reversing:</strong> ${numbers}</p>`;
+
+    
+        if (numbers.includes(8)) {
+            resultHtml += `<p><strong>Number 8 exists</strong></p>`;
+        } else {
+            resultHtml += `<p><strong>Number 8 doesn't exist</strong></p>`;
+        }
+
+    
+        let index = numbers.indexOf(12);
+        resultHtml += `<p><strong>Index of number 12:</strong> ${index}</p>`;
+
+    
+        let doubleNumbers = numbers.map(num => num * 2);
+        resultHtml += `<p><strong>Doubled numbers:</strong> ${doubleNumbers}</p>`;
+
+        document.getElementById("result").innerHTML = resultHtml;
+    </script>
+</body>
+</html>
